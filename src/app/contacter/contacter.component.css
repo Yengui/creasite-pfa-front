@@ -1,0 +1,10 @@
+#google-maps-display img.text-marker {
+  max-width: none !important;
+  background: none !important;
+}
+img {
+  max-width: none;
+}
+#message {
+  resize: none;
+}

@@ -1,0 +1,70 @@
+<app-navbar></app-navbar>
+<section class="bg-white py-20 px-0 sm:px-3">
+  <div
+    class="flex justify-center items-center flex-col lg:flex-row lg:h-[27rem] max-w-5xl mx-auto"
+  >
+    <div
+      class="w-full h-full bg-themeblack-50 flex justify-center items-center lg:rounded-l-lg p-2"
+    >
+      <div
+        class="w-full h-96 lg:h-full"
+        style="max-width: 100%; overflow: hidden; color: red"
+      >
+        <div
+          id="google-maps-display"
+          style="height: 100%; width: 100%; max-width: 100%"
+        >
+          <iframe
+            style="height: 100%; width: 100%; border: 0"
+            frameborder="0"
+            src="https://www.google.com/maps/embed/v1/place?q=Faculté+des+Sciences+de+Tunis+(FST),+Rue+de+Tolède,+Tunis,+Tunisia&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"
+          ></iframe>
+        </div>
+        <a
+          class="embedded-map-code"
+          href="https://www.bootstrapskins.com/themes"
+          id="make-map-data"
+          >premium bootstrap themes</a
+        >
+      </div>
+    </div>
+    <div
+      class="w-full h-full bg-themewhite-50 px-5 py-10 lg:py-0 flex justify-center flex-col rounded-none lg:rounded-r-lg"
+    >
+      <h2 class="font-bold text-2xl">Contacter nous</h2>
+      <input
+        placeholder="email*"
+        required
+        type="email"
+        name="email"
+        id="email"
+        class="mt-2 rounded-md py-2 px-3"
+      />
+      <textarea
+        placeholder="message*"
+        required
+        rows="5"
+        name="message"
+        id="message"
+        class="mt-2 rounded-md py-2 px-3"
+      ></textarea>
+      <button
+        type="button"
+        class="bg-themeblue-50 mt-2 text-white font-semibold rounded-md py-2 hover:bg-cyan-500 duration-300"
+      >
+        Envoyer
+      </button>
+      <ul class="mt-3">
+        <li>
+          <i class="fa fa-phone text-2xl"></i
+          ><span class="pl-3 text-lg font-semibold">+216 11 111 111</span>
+        </li>
+        <li>
+          <i class="fa fa-envelope text-xl"></i
+          ><span class="pl-3 text-lg font-semibold">email@email.com</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+<app-footer></app-footer>

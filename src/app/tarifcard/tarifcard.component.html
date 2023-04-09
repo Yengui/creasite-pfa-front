@@ -1,0 +1,19 @@
+<article class="relative pt-10 w-60 sm:w-80">
+  <div class="${{ class1 }}">
+    <div class="mx-auto w-48 sm:w-60 bg-themewhite-50 rounded-lg pt-5 pb-10">
+      <h2 class="font-bold text-center text-lg sm:text-xl">{{ card.type }}</h2>
+      <h3 class="font-bold text-center text-2xl sm:text-4xl mt-5">
+        {{ card.price }}DT/Mois
+      </h3>
+    </div>
+  </div>
+  <div class="${{ class2 }}">
+    <ul
+      class="flex justify-center items-center flex-col gap-6 text-center text-lg leading-5"
+    >
+      <li>{{ card.description1 }}</li>
+      <li>{{ card.description2 }}</li>
+      <li>{{ card.description3 }}</li>
+    </ul>
+  </div>
+</article>

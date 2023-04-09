@@ -1,0 +1,44 @@
+<div
+  class="bg-white w-full sticky top-0 left-0 z-50 py-8 px-10 sm:px-20 shadow-sm shadow-gray-300"
+>
+  <nav>
+    <ul class="flex justify-between items-center">
+      <li class="text-3xl sm:text-4xl font-black">Creasite</li>
+      <li>
+        <ul class="flex justify-center items-center font-semibold gap-7">
+          <li
+            class="lg:hidden block text-black text-2xl cursor-pointer"
+            (click)="handleListClick()"
+          >
+            <i class="fa fa-bars"></i>
+          </li>
+          <li class="hidden lg:block"><a routerLink="/">Accueil</a></li>
+          <li class="hidden lg:block">
+            <a routerLink="/create">Créer un site</a>
+          </li>
+          <li class="hidden lg:block"><a routerLink="/contact">Contact</a></li>
+          <li class="text-themeblue-50 hidden lg:block">
+            <a routerLink="/signup">S'inscrire</a>
+          </li>
+          <li class="text-black text-2xl cursor-pointer hidden lg:block">
+            <i class="fa fa-bell text-xl"></i>
+          </li>
+          <li class="text-black text-2xl cursor-pointer hidden lg:block">
+            <i class="fa fa-user"></i>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <ul
+      class="mt-5 flex justify-center items-center flex-col gap-5 lg:hidden"
+      *ngIf="openList"
+    >
+      <li><a routerLink="/">Accueil</a></li>
+      <li><a routerLink="/create">Créer un site</a></li>
+      <li><a routerLink="/contact">Contact</a></li>
+      <li class="text-themeblue-50">
+        <a routerLink="/signup">S'inscrire</a>
+      </li>
+    </ul>
+  </nav>
+</div>

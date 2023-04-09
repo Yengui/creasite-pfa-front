@@ -1,0 +1,20 @@
+<div
+  class="w-60 bg-white rounded-lg flex justify-center items-center flex-col p-4"
+>
+  <div
+    class="rounded-full bg-themeblue-50 text-white text-3xl font-bold w-12 h-12 flex justify-center items-center mb-3"
+  >
+    {{ card.number }}
+  </div>
+  <div>
+    <ng-content></ng-content>
+  </div>
+  <h2 class="text-black font-bold text-2xl text-center leading-6 mt-1">
+    {{ card.title }}
+  </h2>
+  <p class="text-black text-sm mt-3 leading-4">
+    {{ card.description1
+    }}<span class="text-themeblue-50">{{ card.description2 }}</span
+    >{{ card.description3 }}
+  </p>
+</div>

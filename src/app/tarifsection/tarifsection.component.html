@@ -1,0 +1,24 @@
+<section class="bg-white pt-16 pb-10">
+  <h1 class="font-black text-3xl text-themegray-50 text-center">
+    ★ Nos Tarifs ★
+  </h1>
+  <div
+    class="flex justify-center items-center gap-5 xl:gap-10 flex-col lg:flex-row py-16"
+  >
+    <app-tarifcard
+      [card]="card1"
+      class1=" absolute top-0 left-0 w-full text-themegray-50 "
+      class2=" pt-40 pb-28 text-white rounded-lg px-5 sm:px-12 shadow-md shadow-gray-600 bg-themegray-50 "
+    ></app-tarifcard>
+    <app-tarifcard
+      [card]="card2"
+      class1=" absolute top-0 left-0 w-full text-themeblack-50 "
+      class2=" pt-40 pb-28 text-white rounded-lg px-5 sm:px-12 shadow-md shadow-gray-600 bg-themeblack-50 "
+    ></app-tarifcard>
+    <app-tarifcard
+      [card]="card3"
+      class1=" absolute top-0 left-0 w-full text-themeblue-50 "
+      class2=" pt-40 pb-28 text-white rounded-lg px-5 sm:px-12 shadow-md shadow-gray-600 bg-themeblue-50 "
+    ></app-tarifcard>
+  </div>
+</section>
