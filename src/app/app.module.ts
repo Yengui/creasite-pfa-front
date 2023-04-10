@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -23,15 +22,6 @@ import { Template2Component } from './template2/template2.component';
 import { Template3Component } from './template3/template3.component';
 import { SiteComponent } from './site/site.component';
 
-const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'login', component: SeconnecterComponent },
-  { path: 'signup', component: SinscrireComponent },
-  { path: 'contact', component: ContacterComponent },
-  { path: 'create', component: CreerpageComponent },
-  { path: 'site/:siteId', component: SiteComponent },
-];
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,14 +43,9 @@ const routes: Routes = [
     Template3Component,
     SiteComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    RouterModule.forRoot(routes),
-    HttpClientModule,
-  ],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
-  exports: [RouterModule],
+  exports: [],
 })
 export class AppModule {}
