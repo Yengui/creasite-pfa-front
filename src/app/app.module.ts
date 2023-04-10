@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,6 +18,10 @@ import { SeconnecterComponent } from './seconnecter/seconnecter.component';
 import { SinscrireComponent } from './sinscrire/sinscrire.component';
 import { ContacterComponent } from './contacter/contacter.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { Template1Component } from './template1/template1.component';
+import { Template2Component } from './template2/template2.component';
+import { Template3Component } from './template3/template3.component';
+import { SiteComponent } from './site/site.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -24,6 +29,7 @@ const routes: Routes = [
   { path: 'signup', component: SinscrireComponent },
   { path: 'contact', component: ContacterComponent },
   { path: 'create', component: CreerpageComponent },
+  { path: 'site/:siteId', component: SiteComponent },
 ];
 
 @NgModule({
@@ -42,8 +48,17 @@ const routes: Routes = [
     SinscrireComponent,
     ContacterComponent,
     NavbarComponent,
+    Template1Component,
+    Template2Component,
+    Template3Component,
+    SiteComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, RouterModule.forRoot(routes)],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    RouterModule.forRoot(routes),
+    HttpClientModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
   exports: [RouterModule],
