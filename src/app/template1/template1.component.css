@@ -1,0 +1,23 @@
+.herosection {
+  background-image: url(./assets/heroimage.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+}
+
+.section1image {
+  background-image: url(./assets/owen-lystrup-boLgiM0qwkg-unsplash1.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.section2image {
+  background-image: url(./assets/mehmet-turgut-kirkgoz-HOPY8VqA1HE-unsplash1.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  mix-blend-mode: screen;
+}

@@ -1,1 +1,97 @@
-<p>template1 works!</p>
+<!-- navbar -->
+<nav
+  class="sm:h-20 w-full bg-[#ffffffb9] sticky top-0 left-0 shadow-sm shadow-gray-500 z-50"
+>
+  <ul class="hidden sm:flex justify-evenly items-center h-full">
+    <li><a class="font-semibold">bouton</a></li>
+    <li><a class="font-semibold">bouton</a></li>
+    <li><a class="mx-8 font-black text-2xl">LOGO</a></li>
+    <li><a class="font-semibold">bouton</a></li>
+    <li><a class="font-semibold">bouton</a></li>
+  </ul>
+  <ul class="flex sm:hidden justify-between items-center px-5 h-full w-full">
+    <li class="py-5"><a class="mx-8 font-black text-2xl">LOGO</a></li>
+    <li class="text-black text-2xl cursor-pointer" (click)="handleListClick()">
+      <i class="fa fa-bars"></i>
+    </li>
+  </ul>
+  <ul
+    *ngIf="openList"
+    class="sm:hidden flex justify-center items-center gap-2 flex-col pb-2 sm:pb-0"
+  >
+    <li><a class="font-semibold">bouton</a></li>
+    <li><a class="font-semibold">bouton</a></li>
+    <li><a class="font-semibold">bouton</a></li>
+    <li><a class="font-semibold">bouton</a></li>
+  </ul>
+</nav>
+
+<!-- hero section -->
+<section class="h-screen w-full relative">
+  <div class="h-full w-full absolute top-0 left-0 herosection z-10"></div>
+  <div
+    class="h-full w-full absolute top-0 left-0 z-20 bg-transparent flex justify-center items-center flex-col"
+  >
+    <h1
+      class="font-bold text-center text-white text-4xl sm:text-5xl lg:text-6xl mb-20"
+    >
+      Nom du site
+    </h1>
+    <div class="flex justify-center items-center flex-col gap-2 sm:flex-row">
+      <button
+        type="button"
+        class="py-2 px-12 border bg-[#FF2E63] border-white text-white hover:bg-transparent hover:border-[#FF2E63] hover:text-[#FF2E63] font-semibold rounded-lg duration-300 sm:text-xl"
+      >
+        bouton
+      </button>
+      <button
+        type="button"
+        class="py-2 px-12 border bg-transparent border-[#FF2E63] text-[#FF2E63] hover:bg-[#FF2E63] hover:border-white hover:text-white font-semibold rounded-lg duration-300 sm:text-xl"
+      >
+        bouton
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- section 1 -->
+<section class="py-32">
+  <div
+    class="rounded-none sm:rounded-lg shadow-md shadow-gray-300 flex justify-between items-center flex-col sm:flex-row mx-1 sm:mx-8 border border-gray-300"
+  >
+    <div class="w-full rounded-none sm:rounded-l-lg py-10 sm:py-1">
+      <h2 class="font-bold text-3xl mb-2 px-12">Mettez votre titre</h2>
+      <p class="px-12">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vitae
+        convallis dui, sed commodo ante. Nulla vel placerat sapien. Aliquam.
+      </p>
+      <p class="text-sm text-[#FF2E63] mt-2 px-12">
+        Lorem ipsum dolor sit amet.
+      </p>
+    </div>
+    <div class="w-full h-96 rounded-none sm:rounded-r-lg section1image"></div>
+  </div>
+</section>
+
+<!-- section 2 -->
+<section class="py-20 bg-[#08D9D6] relative">
+  <div class="absolute top-0 left-0 w-full h-full section2image z-10"></div>
+  <h2 class="text-center font-bold text-2xl sm:text-4xl mb-10 z-20 relative">
+    Mettez votre titre
+  </h2>
+  <p class="text-center px-3 sm:px-10 md:px-20 lg:px-40 z-20 relative">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et leo
+    interdum leo maximus aliquam non ut felis. Suspendisse ultrices ex ante, sit
+    amet aliquet purus placerat vitae. Aliquam eros velit, elementum fringilla
+    sem eget, ullamcorper pulvinar nulla. Integer dapibus.
+  </p>
+</section>
+
+<!-- section 3 -->
+<section></section>
+
+<!-- section 4 -->
+<section></section>
+
+<!-- footer -->
+<footer></footer>
