@@ -6,6 +6,7 @@ import { SinscrireComponent } from './sinscrire/sinscrire.component';
 import { ContacterComponent } from './contacter/contacter.component';
 import { CreerpageComponent } from './creerpage/creerpage.component';
 import { SiteComponent } from './site/site.component';
+import { PreviewComponent } from './preview/preview.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'contact', component: ContacterComponent },
   { path: 'create', component: CreerpageComponent },
   { path: 'site/:siteId', component: SiteComponent },
+  { path: 'preview/:siteId', component: PreviewComponent },
 ];
 
 @NgModule({

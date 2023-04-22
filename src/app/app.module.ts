@@ -21,6 +21,7 @@ import { Template1Component } from './template1/template1.component';
 import { Template2Component } from './template2/template2.component';
 import { Template3Component } from './template3/template3.component';
 import { SiteComponent } from './site/site.component';
+import { PreviewComponent } from './preview/preview.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { SiteComponent } from './site/site.component';
     Template2Component,
     Template3Component,
     SiteComponent,
+    PreviewComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],

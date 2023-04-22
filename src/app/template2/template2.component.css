@@ -1,0 +1,13 @@
+.herosection {
+  background-image: url(./assets/image5.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.section2 {
+  background-image: url(./assets/image8.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
