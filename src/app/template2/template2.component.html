@@ -3,14 +3,20 @@
   class="sm:h-20 w-full bg-[#ffffffb9] sticky top-0 left-0 shadow-sm shadow-gray-500 z-50"
 >
   <ul class="hidden sm:flex justify-evenly items-center h-full">
-    <li><a class="mx-8 font-black text-2xl pr-56 lg:pr-96">LOGO</a></li>
-    <li><a class="font-semibold">bouton</a></li>
-    <li><a class="font-semibold">bouton</a></li>
-    <li><a class="font-semibold">bouton</a></li>
-    <li><a class="font-semibold">bouton</a></li>
+    <li>
+      <a class="mx-8 font-black text-2xl pr-56 lg:pr-96" href="preview/2#hero"
+        >LOGO</a
+      >
+    </li>
+    <li><a class="font-semibold" href="preview/2#section1">section1</a></li>
+    <li><a class="font-semibold" href="preview/2#section2">section2</a></li>
+    <li><a class="font-semibold" href="preview/2#section3">section3</a></li>
+    <li><a class="font-semibold" href="preview/2#section4">section4</a></li>
   </ul>
   <ul class="flex sm:hidden justify-between items-center px-5 h-full w-full">
-    <li class="py-5"><a class="mx-8 font-black text-2xl">LOGO</a></li>
+    <li class="py-5">
+      <a class="mx-8 font-black text-2xl" href="preview/2#hero">LOGO</a>
+    </li>
     <li class="text-black text-2xl cursor-pointer" (click)="handleListClick()">
       <i class="fa fa-bars"></i>
     </li>
@@ -19,15 +25,16 @@
     *ngIf="openList"
     class="sm:hidden flex justify-center items-center gap-2 flex-col pb-2 sm:pb-0"
   >
-    <li><a class="font-semibold">bouton</a></li>
-    <li><a class="font-semibold">bouton</a></li>
-    <li><a class="font-semibold">bouton</a></li>
-    <li><a class="font-semibold">bouton</a></li>
+    <li><a class="font-semibold" href="preview/2#section1">section1</a></li>
+    <li><a class="font-semibold" href="preview/2#section2">section2</a></li>
+    <li><a class="font-semibold" href="preview/2#section3">section3</a></li>
+    <li><a class="font-semibold" href="preview/2#section4">section4</a></li>
   </ul>
 </nav>
 
 <!-- hero section -->
 <section
+  id="hero"
   class="h-screen w-full flex justify-end items-start flex-col text-white herosection pb-3 pl-3 sm:pb-10 sm:pl-10"
 >
   <h1 class="text-4xl sm:text-5xl font-black">Votre titre ici</h1>
@@ -35,7 +42,7 @@
 </section>
 
 <!-- section 1 -->
-<section class="pt-28 pb-20">
+<section class="pt-28 pb-20" id="section1">
   <h1
     class="text-center underline decoration-[#FFE500] decoration-4 text-black font-black text-4xl pb-16"
   >
@@ -58,14 +65,17 @@
 </section>
 
 <!-- section 2 -->
-<section class="section2 h-96 flex justify-end items-end p-3 sm:p-10">
+<section
+  class="section2 h-96 flex justify-end items-end p-3 sm:p-10"
+  id="section2"
+>
   <h1 class="font-bold text-white text-4xl sm:text-5xl">
     Lorem ipsum dolor sit amet...
   </h1>
 </section>
 
 <!-- section 3 -->
-<section class="pt-28 pb-20">
+<section class="pt-28 pb-20" id="section3">
   <div
     class="flex justify-center items-center flex-col sm:flex-row gap-5 px-3 sm:px-10"
   >
@@ -103,7 +113,7 @@
 </section>
 
 <!-- section 4 -->
-<section class="pt-28 pb-20">
+<section class="pt-28 pb-20" id="section4">
   <h1
     class="text-center underline decoration-[#FFE500] decoration-4 text-black font-black text-4xl pb-20"
   >
