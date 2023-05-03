@@ -1,0 +1,633 @@
+<app-navbar></app-navbar>
+<form
+  #myForm="ngForm"
+  (ngSubmit)="onSubmit(myForm)"
+  class="w-full md:w-11/12 rounded-lg bg-gray-50 border-gray-400 shadow-sm shadow-gray-800 px-3 sm:px-10 xl:px-20 text-center flex justify-center items-start flex-col gap-1 py-10 mx-auto my-10"
+>
+  <!-- Hero section  -->
+  <label class="text-xl font-bold my-5">
+    <input type="checkbox" name="hero" [(ngModel)]="sections[0].isVisible" />
+    {{ sections[0].name }}
+  </label>
+  <label for="hero-titre" class="pl-2" *ngIf="sections[0].isVisible"
+    >Titre</label
+  >
+  <input
+    type="text"
+    name="hero-titre"
+    id="hero-titre"
+    class="w-full py-2 px-3 rounded-md border border-gray-500"
+    placeholder="Nom du site"
+    [(ngModel)]="herotitre"
+    *ngIf="sections[0].isVisible"
+  />
+  <label for="hero-section1" class="pl-2" *ngIf="sections[0].isVisible"
+    >bouton section1</label
+  >
+  <input
+    type="text"
+    name="hero-section1"
+    id="hero-section1"
+    class="w-full py-2 px-3 rounded-md border border-gray-500"
+    placeholder="section1"
+    *ngIf="sections[0].isVisible"
+  />
+  <label for="hero-section3" class="pl-2" *ngIf="sections[0].isVisible"
+    >bouton section3</label
+  >
+  <input
+    type="text"
+    name="hero-section3"
+    id="hero-section3"
+    class="w-full py-2 px-3 rounded-md border border-gray-500"
+    placeholder="section3"
+    *ngIf="sections[0].isVisible"
+  />
+  <label for="hero-image" class="pl-2" *ngIf="sections[0].isVisible"
+    >Image de fond</label
+  >
+  <input
+    id="hero-image"
+    type="file"
+    #herosection
+    accept="image/*"
+    *ngIf="sections[0].isVisible"
+  />
+  <div class="w-full text-left" *ngIf="ticks['herosection'] === true">✔</div>
+  <button
+    type="button"
+    (click)="upload('herosection')"
+    *ngIf="sections[0].isVisible"
+    class="bg-blue-500 px-5 py-2 rounded-sm hover:bg-blue-600 duration-200 text-white"
+  >
+    Upload
+  </button>
+  <hr class="w-full mt-3" />
+  <!-- Section 1  -->
+  <label class="text-xl font-bold my-5">
+    <input
+      type="checkbox"
+      name="section1"
+      [(ngModel)]="sections[1].isVisible"
+    />
+    {{ sections[1].name }}
+  </label>
+  <label for="section1-titre" class="pl-2" *ngIf="sections[1].isVisible"
+    >Titre</label
+  >
+  <input
+    type="text"
+    name="section1-titre"
+    id="section1-titre"
+    class="w-full py-2 px-3 rounded-md border border-gray-500"
+    placeholder="Mettez votre titre"
+    *ngIf="sections[1].isVisible"
+  />
+  <label for="section1-description1" class="pl-2" *ngIf="sections[1].isVisible"
+    >description 1</label
+  >
+  <input
+    type="text"
+    name="section1-description1"
+    id="section1-description1"
+    class="w-full py-2 px-3 rounded-md border border-gray-500"
+    placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vitae convallis dui, sed commodo ante. Nulla vel placerat sapien. Aliquam."
+    *ngIf="sections[1].isVisible"
+  />
+  <label for="section1-description2" class="pl-2" *ngIf="sections[1].isVisible"
+    >description 2</label
+  >
+  <input
+    type="text"
+    name="section1-description2"
+    id="section1-description2"
+    class="w-full py-2 px-3 rounded-md border border-gray-500"
+    placeholder="Lorem ipsum dolor sit amet."
+    *ngIf="sections[1].isVisible"
+  />
+  <label for="section1-image" class="pl-2" *ngIf="sections[1].isVisible"
+    >Image</label
+  >
+  <input
+    id="section1-image"
+    type="file"
+    #section1image
+    accept="image/*"
+    *ngIf="sections[1].isVisible"
+  />
+  <div class="w-full text-left" *ngIf="ticks['section1image'] === true">✔</div>
+  <button
+    type="button"
+    (click)="upload('section1image')"
+    *ngIf="sections[1].isVisible"
+    class="bg-blue-500 px-5 py-2 rounded-sm hover:bg-blue-600 duration-200 text-white"
+  >
+    Upload
+  </button>
+  <hr class="w-full mt-3" />
+  <!-- Section 2 -->
+  <label class="text-xl font-bold my-5">
+    <input
+      type="checkbox"
+      name="section2"
+      [(ngModel)]="sections[2].isVisible"
+    />
+    {{ sections[2].name }}
+  </label>
+  <label for="section2-titre" class="pl-2" *ngIf="sections[2].isVisible"
+    >Titre</label
+  >
+  <input
+    type="text"
+    name="section2-titre"
+    id="section2-titre"
+    class="w-full py-2 px-3 rounded-md border border-gray-500"
+    placeholder="Mettez votre titre"
+    *ngIf="sections[2].isVisible"
+  />
+  <label for="section2-description1" class="pl-2" *ngIf="sections[2].isVisible"
+    >description</label
+  >
+  <input
+    type="text"
+    name="section2-description1"
+    id="section2-description1"
+    class="w-full py-2 px-3 rounded-md border border-gray-500"
+    placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et leo interdum leo maximus aliquam non ut felis. Suspendisse ultrices ex ante, sit amet aliquet purus placerat vitae. Aliquam eros velit, elementum fringilla sem eget, ullamcorper pulvinar nulla. Integer dapibus."
+    *ngIf="sections[2].isVisible"
+  />
+  <hr class="w-full mt-3" />
+  <!-- Section 3 -->
+  <label class="text-xl font-bold my-5">
+    <input
+      type="checkbox"
+      name="section3"
+      [(ngModel)]="sections[3].isVisible"
+    />
+    {{ sections[3].name }}
+  </label>
+  <!-- -------------- Carte 1 -------------- -->
+  <label for="section3-titre-carte1" class="pl-2" *ngIf="sections[3].isVisible"
+    >Titre carte 1</label
+  >
+  <input
+    type="text"
+    name="section3-titre-carte1"
+    id="section3-titre-carte1"
+    class="w-full py-2 px-3 rounded-md border border-gray-500"
+    placeholder="Mon titre"
+    *ngIf="sections[3].isVisible"
+  />
+  <label
+    for="section3-description-carte1"
+    class="pl-2"
+    *ngIf="sections[3].isVisible"
+    >description carte 1</label
+  >
+  <input
+    type="text"
+    name="section3-description-carte1"
+    id="section3-description-carte1"
+    class="w-full py-2 px-3 rounded-md border border-gray-500"
+    placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras et."
+    *ngIf="sections[3].isVisible"
+  />
+  <label for="section3-image-carte1" class="pl-2" *ngIf="sections[3].isVisible"
+    >Image carte 1</label
+  >
+  <input
+    id="section3-image-carte1"
+    type="file"
+    #section3image1
+    accept="image/*"
+    *ngIf="sections[3].isVisible"
+  />
+  <div class="w-full text-left" *ngIf="ticks['section3image1'] === true">✔</div>
+  <button
+    type="button"
+    (click)="upload('section3image1')"
+    *ngIf="sections[3].isVisible"
+    class="bg-blue-500 px-5 py-2 rounded-sm hover:bg-blue-600 duration-200 text-white"
+  >
+    Upload
+  </button>
+  <!-- -------------- Carte 2 -------------- -->
+  <label for="section3-titre-carte2" class="pl-2" *ngIf="sections[3].isVisible"
+    >Titre carte 2</label
+  >
+  <input
+    type="text"
+    name="section3-titre-carte2"
+    id="section3-titre-carte2"
+    class="w-full py-2 px-3 rounded-md border border-gray-500"
+    placeholder="Mon titre"
+    *ngIf="sections[3].isVisible"
+  />
+  <label
+    for="section3-description-carte2"
+    class="pl-2"
+    *ngIf="sections[3].isVisible"
+    >description carte 2</label
+  >
+  <input
+    type="text"
+    name="section3-description-carte2"
+    id="section3-description-carte2"
+    class="w-full py-2 px-3 rounded-md border border-gray-500"
+    placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras et."
+    *ngIf="sections[3].isVisible"
+  />
+  <label for="section3-image-carte2" class="pl-2" *ngIf="sections[3].isVisible"
+    >Image carte 2</label
+  >
+  <input
+    id="section3-image-carte2"
+    type="file"
+    #section3image2
+    accept="image/*"
+    *ngIf="sections[3].isVisible"
+  />
+  <div class="w-full text-left" *ngIf="ticks['section3image2'] === true">✔</div>
+  <button
+    type="button"
+    (click)="upload('section3image2')"
+    *ngIf="sections[3].isVisible"
+    class="bg-blue-500 px-5 py-2 rounded-sm hover:bg-blue-600 duration-200 text-white"
+  >
+    Upload
+  </button>
+  <!-- -------------- Carte 3 -------------- -->
+  <label for="section3-titre-carte3" class="pl-2" *ngIf="sections[3].isVisible"
+    >Titre carte 3</label
+  >
+  <input
+    type="text"
+    name="section3-titre-carte3"
+    id="section3-titre-carte3"
+    class="w-full py-2 px-3 rounded-md border border-gray-500"
+    placeholder="Mon titre"
+    *ngIf="sections[3].isVisible"
+  />
+  <label
+    for="section3-description-carte3"
+    class="pl-2"
+    *ngIf="sections[3].isVisible"
+    >description carte 3</label
+  >
+  <input
+    type="text"
+    name="section3-description-carte3"
+    id="section3-description-carte3"
+    class="w-full py-2 px-3 rounded-md border border-gray-500"
+    placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras et."
+    *ngIf="sections[3].isVisible"
+  />
+  <label for="section3-image-carte3" class="pl-2" *ngIf="sections[3].isVisible"
+    >Image carte 3</label
+  >
+  <input
+    id="section3-image-carte3"
+    type="file"
+    #section3image3
+    accept="image/*"
+    *ngIf="sections[3].isVisible"
+  />
+  <div class="w-full text-left" *ngIf="ticks['section3image3'] === true">✔</div>
+  <button
+    type="button"
+    (click)="upload('section3image3')"
+    *ngIf="sections[3].isVisible"
+    class="bg-blue-500 px-5 py-2 rounded-sm hover:bg-blue-600 duration-200 text-white"
+  >
+    Upload
+  </button>
+  <!-- -------------- Carte 4 -------------- -->
+  <label for="section3-titre-carte4" class="pl-2" *ngIf="sections[3].isVisible"
+    >Titre carte 4</label
+  >
+  <input
+    type="text"
+    name="section3-titre-carte4"
+    id="section3-titre-carte4"
+    class="w-full py-2 px-3 rounded-md border border-gray-500"
+    placeholder="Mon titre"
+    *ngIf="sections[3].isVisible"
+  />
+  <label
+    for="section3-description-carte4"
+    class="pl-2"
+    *ngIf="sections[3].isVisible"
+    >description carte 4</label
+  >
+  <input
+    type="text"
+    name="section3-description-carte4"
+    id="section3-description-carte4"
+    class="w-full py-2 px-3 rounded-md border border-gray-500"
+    placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras et."
+    *ngIf="sections[3].isVisible"
+  />
+  <label for="section3-image-carte4" class="pl-2" *ngIf="sections[3].isVisible"
+    >Image carte 4</label
+  >
+  <input
+    id="section3-image-carte4"
+    type="file"
+    #section3image1
+    accept="image/*"
+    *ngIf="sections[3].isVisible"
+  />
+  <div class="w-full text-left" *ngIf="ticks['section3image4'] === true">✔</div>
+  <button
+    type="button"
+    (click)="upload('section3image4')"
+    *ngIf="sections[3].isVisible"
+    class="bg-blue-500 px-5 py-2 rounded-sm hover:bg-blue-600 duration-200 text-white"
+  >
+    Upload
+  </button>
+  <hr class="w-full mt-3" />
+  <!-- Section 4 -->
+  <label class="text-xl font-bold my-5">
+    <input
+      type="checkbox"
+      name="section4"
+      [(ngModel)]="sections[4].isVisible"
+    />
+    {{ sections[4].name }}
+  </label>
+  <label for="section4-titre" class="pl-2" *ngIf="sections[4].isVisible"
+    >Titre</label
+  >
+  <input
+    type="text"
+    name="section4-titre"
+    id="section4-titre"
+    class="w-full py-2 px-3 rounded-md border border-gray-500"
+    placeholder="Lorem ipsum dolor sit amet"
+    *ngIf="sections[4].isVisible"
+  />
+  <label for="section4-description1" class="pl-2" *ngIf="sections[4].isVisible"
+    >description</label
+  >
+  <input
+    type="text"
+    name="section4-description1"
+    id="section4-description1"
+    class="w-full py-2 px-3 rounded-md border border-gray-500"
+    placeholder="Lorem ipsum dolor sit amet"
+    *ngIf="sections[4].isVisible"
+  />
+  <label for="section4-image1" class="pl-2" *ngIf="sections[4].isVisible"
+    >Image 1</label
+  >
+  <input
+    id="section4-image1"
+    type="file"
+    #section4image1
+    accept="image/*"
+    *ngIf="sections[4].isVisible"
+  />
+  <div class="w-full text-left" *ngIf="ticks['section4image1'] === true">✔</div>
+  <button
+    type="button"
+    (click)="upload('section4image1')"
+    *ngIf="sections[4].isVisible"
+    class="bg-blue-500 px-5 py-2 rounded-sm hover:bg-blue-600 duration-200 text-white"
+  >
+    Upload
+  </button>
+  <label for="section4-image2" class="pl-2" *ngIf="sections[4].isVisible"
+    >Image 2</label
+  >
+  <input
+    id="section4-image2"
+    type="file"
+    #section4image2
+    accept="image/*"
+    *ngIf="sections[4].isVisible"
+  />
+  <div class="w-full text-left" *ngIf="ticks['section4image2'] === true">✔</div>
+  <button
+    type="button"
+    (click)="upload('section4image2')"
+    *ngIf="sections[4].isVisible"
+    class="bg-blue-500 px-5 py-2 rounded-sm hover:bg-blue-600 duration-200 text-white"
+  >
+    Upload
+  </button>
+  <label for="section4-image3" class="pl-2" *ngIf="sections[4].isVisible"
+    >Image 3</label
+  >
+  <input
+    id="section4-image3"
+    type="file"
+    #section4image3
+    accept="image/*"
+    *ngIf="sections[4].isVisible"
+  />
+  <div class="w-full text-left" *ngIf="ticks['section4image3'] === true">✔</div>
+  <button
+    type="button"
+    (click)="upload('section4image3')"
+    *ngIf="sections[4].isVisible"
+    class="bg-blue-500 px-5 py-2 rounded-sm hover:bg-blue-600 duration-200 text-white"
+  >
+    Upload
+  </button>
+  <label for="section4-image4" class="pl-2" *ngIf="sections[4].isVisible"
+    >Image 4</label
+  >
+  <input
+    id="section4-image4"
+    type="file"
+    #section4image4
+    accept="image/*"
+    *ngIf="sections[4].isVisible"
+  />
+  <div class="w-full text-left" *ngIf="ticks['section4image4'] === true">✔</div>
+  <button
+    type="button"
+    (click)="upload('section4image4')"
+    *ngIf="sections[4].isVisible"
+    class="bg-blue-500 px-5 py-2 rounded-sm hover:bg-blue-600 duration-200 text-white"
+  >
+    Upload
+  </button>
+  <hr class="w-full mt-3" />
+  <!-- Footer  -->
+  <label class="text-xl font-bold my-5">
+    <input type="checkbox" name="hero" [(ngModel)]="sections[5].isVisible" />
+    {{ sections[5].name }}
+  </label>
+  <label for="footer-image" class="pl-2" *ngIf="sections[5].isVisible"
+    >Image</label
+  >
+  <input
+    id="footer-image"
+    type="file"
+    #footerimage
+    accept="image/*"
+    *ngIf="sections[5].isVisible"
+  />
+  <div class="w-full text-left" *ngIf="ticks['footerimage'] === true">✔</div>
+  <button
+    type="button"
+    (click)="upload('footerimage')"
+    *ngIf="sections[5].isVisible"
+    class="bg-blue-500 px-5 py-2 rounded-sm hover:bg-blue-600 duration-200 text-white"
+  >
+    Upload
+  </button>
+  <label for="footer-titre1" class="pl-2" *ngIf="sections[5].isVisible"
+    >Titre 1</label
+  >
+  <input
+    type="text"
+    name="footer-titre1"
+    id="footer-titre1"
+    class="w-full py-2 px-3 rounded-md border border-gray-500"
+    placeholder="titre1"
+    *ngIf="sections[5].isVisible"
+  />
+  <label for="footer-soustitre1" class="pl-2" *ngIf="sections[5].isVisible"
+    >Sous titre 1</label
+  >
+  <input
+    type="text"
+    name="footer-soustitre1"
+    id="footer-soustitre1"
+    class="w-full py-2 px-3 rounded-md border border-gray-500"
+    placeholder="soustitre1"
+    *ngIf="sections[5].isVisible"
+  />
+  <label for="footer-soustitre2" class="pl-2" *ngIf="sections[5].isVisible"
+    >Sous titre 2</label
+  >
+  <input
+    type="text"
+    name="footer-soustitre2"
+    id="footer-soustitre2"
+    class="w-full py-2 px-3 rounded-md border border-gray-500"
+    placeholder="soustitre2"
+    *ngIf="sections[5].isVisible"
+  />
+  <label for="footer-soustitre3" class="pl-2" *ngIf="sections[5].isVisible"
+    >Sous titre 3</label
+  >
+  <input
+    type="text"
+    name="footer-soustitre3"
+    id="footer-soustitre3"
+    class="w-full py-2 px-3 rounded-md border border-gray-500"
+    placeholder="soustitre3"
+    *ngIf="sections[5].isVisible"
+  />
+  <label for="footer-soustitre4" class="pl-2" *ngIf="sections[5].isVisible"
+    >Sous titre 4</label
+  >
+  <input
+    type="text"
+    name="footer-soustitre4"
+    id="footer-soustitre4"
+    class="w-full py-2 px-3 rounded-md border border-gray-500"
+    placeholder="soustitre4"
+    *ngIf="sections[5].isVisible"
+  />
+  <label for="footer-soustitre5" class="pl-2" *ngIf="sections[5].isVisible"
+    >Sous titre 5</label
+  >
+  <input
+    type="text"
+    name="footer-soustitre5"
+    id="footer-soustitre5"
+    class="w-full py-2 px-3 rounded-md border border-gray-500"
+    placeholder="soustitre5"
+    *ngIf="sections[5].isVisible"
+  />
+  <label for="footer-soustitre6" class="pl-2" *ngIf="sections[5].isVisible"
+    >Sous titre 6</label
+  >
+  <input
+    type="text"
+    name="footer-soustitre6"
+    id="footer-soustitre6"
+    class="w-full py-2 px-3 rounded-md border border-gray-500"
+    placeholder="soustitre6"
+    *ngIf="sections[5].isVisible"
+  />
+  <label for="footer-titre2" class="pl-2" *ngIf="sections[5].isVisible"
+    >Titre 2</label
+  >
+  <input
+    type="text"
+    name="footer-titre2"
+    id="footer-titre2"
+    class="w-full py-2 px-3 rounded-md border border-gray-500"
+    placeholder="titre2"
+    *ngIf="sections[5].isVisible"
+  />
+  <label for="footer-soustitre2-1" class="pl-2" *ngIf="sections[5].isVisible"
+    >Sous titre 1</label
+  >
+  <input
+    type="text"
+    name="footer-soustitre2-1"
+    id="footer-soustitre2-1"
+    class="w-full py-2 px-3 rounded-md border border-gray-500"
+    placeholder="soustitre 1"
+    *ngIf="sections[5].isVisible"
+  />
+  <label for="footer-soustitre2-2" class="pl-2" *ngIf="sections[5].isVisible"
+    >Sous titre 2</label
+  >
+  <input
+    type="text"
+    name="footer-soustitre2-2"
+    id="footer-soustitre2-2"
+    class="w-full py-2 px-3 rounded-md border border-gray-500"
+    placeholder="soustitre 2"
+    *ngIf="sections[5].isVisible"
+  />
+  <label for="footer-soustitre2-3" class="pl-2" *ngIf="sections[5].isVisible"
+    >Sous titre 3</label
+  >
+  <input
+    type="text"
+    name="footer-soustitre2-3"
+    id="footer-soustitre2-3"
+    class="w-full py-2 px-3 rounded-md border border-gray-500"
+    placeholder="soustitre 3"
+    *ngIf="sections[5].isVisible"
+  />
+  <label for="footer-titre3" class="pl-2" *ngIf="sections[5].isVisible"
+    >Titre 3</label
+  >
+  <input
+    type="text"
+    name="footer-titre3"
+    id="footer-titre3"
+    class="w-full py-2 px-3 rounded-md border border-gray-500"
+    placeholder="titre3"
+    *ngIf="sections[5].isVisible"
+  />
+  <label for="footer-soustitre3-1" class="pl-2" *ngIf="sections[5].isVisible"
+    >Sous titre 1</label
+  >
+  <input
+    type="text"
+    name="footer-soustitre3-1"
+    id="footer-soustitre3-1"
+    class="w-full py-2 px-3 rounded-md border border-gray-500"
+    placeholder="soustitre 1"
+    *ngIf="sections[5].isVisible"
+  />
+  <hr class="w-full mt-3" />
+  <button
+    type="submit"
+    class="bg-themeblue-50 mt-3 px-10 py-2 font-semibold text-white rounded-full hover:bg-cyan-500 duration-200"
+  >
+    Valider
+  </button>
+</form>
+<app-footer></app-footer>

@@ -1,0 +1,6 @@
+<ng-container [ngSwitch]="form">
+  <app-form1 *ngSwitchCase="1"></app-form1>
+  <app-form2 *ngSwitchCase="2"></app-form2>
+  <app-form3 *ngSwitchCase="3"></app-form3>
+  <div *ngSwitchDefault>Not found</div>
+</ng-container>

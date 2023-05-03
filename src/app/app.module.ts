@@ -23,6 +23,10 @@ import { Template2Component } from './template2/template2.component';
 import { Template3Component } from './template3/template3.component';
 import { SiteComponent } from './site/site.component';
 import { PreviewComponent } from './preview/preview.component';
+import { Form1Component } from './form1/form1.component';
+import { Form2Component } from './form2/form2.component';
+import { Form3Component } from './form3/form3.component';
+import { FormselectorComponent } from './formselector/formselector.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +49,10 @@ import { PreviewComponent } from './preview/preview.component';
     Template3Component,
     SiteComponent,
     PreviewComponent,
+    Form1Component,
+    Form2Component,
+    Form3Component,
+    FormselectorComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],
