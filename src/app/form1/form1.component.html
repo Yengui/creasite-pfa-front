@@ -30,6 +30,7 @@
     id="hero-section1"
     class="w-full py-2 px-3 rounded-md border border-gray-500"
     placeholder="section1"
+    [(ngModel)]="herobutton1"
     *ngIf="sections[0].isVisible"
   />
   <label for="hero-section3" class="pl-2" *ngIf="sections[0].isVisible"
@@ -41,6 +42,7 @@
     id="hero-section3"
     class="w-full py-2 px-3 rounded-md border border-gray-500"
     placeholder="section3"
+    [(ngModel)]="herobutton2"
     *ngIf="sections[0].isVisible"
   />
   <label for="hero-image" class="pl-2" *ngIf="sections[0].isVisible"
@@ -81,6 +83,7 @@
     id="section1-titre"
     class="w-full py-2 px-3 rounded-md border border-gray-500"
     placeholder="Mettez votre titre"
+    [(ngModel)]="section1title"
     *ngIf="sections[1].isVisible"
   />
   <label for="section1-description1" class="pl-2" *ngIf="sections[1].isVisible"
@@ -92,6 +95,7 @@
     id="section1-description1"
     class="w-full py-2 px-3 rounded-md border border-gray-500"
     placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vitae convallis dui, sed commodo ante. Nulla vel placerat sapien. Aliquam."
+    [(ngModel)]="section1description1"
     *ngIf="sections[1].isVisible"
   />
   <label for="section1-description2" class="pl-2" *ngIf="sections[1].isVisible"
@@ -103,6 +107,7 @@
     id="section1-description2"
     class="w-full py-2 px-3 rounded-md border border-gray-500"
     placeholder="Lorem ipsum dolor sit amet."
+    [(ngModel)]="section1description2"
     *ngIf="sections[1].isVisible"
   />
   <label for="section1-image" class="pl-2" *ngIf="sections[1].isVisible"
@@ -143,6 +148,7 @@
     id="section2-titre"
     class="w-full py-2 px-3 rounded-md border border-gray-500"
     placeholder="Mettez votre titre"
+    [(ngModel)]="section2title"
     *ngIf="sections[2].isVisible"
   />
   <label for="section2-description1" class="pl-2" *ngIf="sections[2].isVisible"
@@ -154,6 +160,7 @@
     id="section2-description1"
     class="w-full py-2 px-3 rounded-md border border-gray-500"
     placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et leo interdum leo maximus aliquam non ut felis. Suspendisse ultrices ex ante, sit amet aliquet purus placerat vitae. Aliquam eros velit, elementum fringilla sem eget, ullamcorper pulvinar nulla. Integer dapibus."
+    [(ngModel)]="section2description"
     *ngIf="sections[2].isVisible"
   />
   <hr class="w-full mt-3" />
@@ -176,6 +183,7 @@
     id="section3-titre-carte1"
     class="w-full py-2 px-3 rounded-md border border-gray-500"
     placeholder="Mon titre"
+    [(ngModel)]="section3title1"
     *ngIf="sections[3].isVisible"
   />
   <label
@@ -190,6 +198,7 @@
     id="section3-description-carte1"
     class="w-full py-2 px-3 rounded-md border border-gray-500"
     placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras et."
+    [(ngModel)]="section3description1"
     *ngIf="sections[3].isVisible"
   />
   <label for="section3-image-carte1" class="pl-2" *ngIf="sections[3].isVisible"
@@ -221,6 +230,7 @@
     id="section3-titre-carte2"
     class="w-full py-2 px-3 rounded-md border border-gray-500"
     placeholder="Mon titre"
+    [(ngModel)]="section3title2"
     *ngIf="sections[3].isVisible"
   />
   <label
@@ -235,6 +245,7 @@
     id="section3-description-carte2"
     class="w-full py-2 px-3 rounded-md border border-gray-500"
     placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras et."
+    [(ngModel)]="section3description2"
     *ngIf="sections[3].isVisible"
   />
   <label for="section3-image-carte2" class="pl-2" *ngIf="sections[3].isVisible"
@@ -266,6 +277,7 @@
     id="section3-titre-carte3"
     class="w-full py-2 px-3 rounded-md border border-gray-500"
     placeholder="Mon titre"
+    [(ngModel)]="section3title3"
     *ngIf="sections[3].isVisible"
   />
   <label
@@ -280,6 +292,7 @@
     id="section3-description-carte3"
     class="w-full py-2 px-3 rounded-md border border-gray-500"
     placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras et."
+    [(ngModel)]="section3description3"
     *ngIf="sections[3].isVisible"
   />
   <label for="section3-image-carte3" class="pl-2" *ngIf="sections[3].isVisible"
@@ -311,6 +324,7 @@
     id="section3-titre-carte4"
     class="w-full py-2 px-3 rounded-md border border-gray-500"
     placeholder="Mon titre"
+    [(ngModel)]="section3title4"
     *ngIf="sections[3].isVisible"
   />
   <label
@@ -325,6 +339,7 @@
     id="section3-description-carte4"
     class="w-full py-2 px-3 rounded-md border border-gray-500"
     placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras et."
+    [(ngModel)]="section3description4"
     *ngIf="sections[3].isVisible"
   />
   <label for="section3-image-carte4" class="pl-2" *ngIf="sections[3].isVisible"
@@ -365,6 +380,7 @@
     id="section4-titre"
     class="w-full py-2 px-3 rounded-md border border-gray-500"
     placeholder="Lorem ipsum dolor sit amet"
+    [(ngModel)]="section4title"
     *ngIf="sections[4].isVisible"
   />
   <label for="section4-description1" class="pl-2" *ngIf="sections[4].isVisible"
@@ -376,6 +392,7 @@
     id="section4-description1"
     class="w-full py-2 px-3 rounded-md border border-gray-500"
     placeholder="Lorem ipsum dolor sit amet"
+    [(ngModel)]="section4description"
     *ngIf="sections[4].isVisible"
   />
   <label for="section4-image1" class="pl-2" *ngIf="sections[4].isVisible"
@@ -488,6 +505,7 @@
     id="footer-titre1"
     class="w-full py-2 px-3 rounded-md border border-gray-500"
     placeholder="titre1"
+    [(ngModel)]="footertitle1"
     *ngIf="sections[5].isVisible"
   />
   <label for="footer-soustitre1" class="pl-2" *ngIf="sections[5].isVisible"
@@ -499,6 +517,7 @@
     id="footer-soustitre1"
     class="w-full py-2 px-3 rounded-md border border-gray-500"
     placeholder="soustitre1"
+    [(ngModel)]="footer1subtitle1"
     *ngIf="sections[5].isVisible"
   />
   <label for="footer-soustitre2" class="pl-2" *ngIf="sections[5].isVisible"
@@ -510,6 +529,7 @@
     id="footer-soustitre2"
     class="w-full py-2 px-3 rounded-md border border-gray-500"
     placeholder="soustitre2"
+    [(ngModel)]="footer1subtitle2"
     *ngIf="sections[5].isVisible"
   />
   <label for="footer-soustitre3" class="pl-2" *ngIf="sections[5].isVisible"
@@ -521,6 +541,7 @@
     id="footer-soustitre3"
     class="w-full py-2 px-3 rounded-md border border-gray-500"
     placeholder="soustitre3"
+    [(ngModel)]="footer1subtitle3"
     *ngIf="sections[5].isVisible"
   />
   <label for="footer-soustitre4" class="pl-2" *ngIf="sections[5].isVisible"
@@ -532,6 +553,7 @@
     id="footer-soustitre4"
     class="w-full py-2 px-3 rounded-md border border-gray-500"
     placeholder="soustitre4"
+    [(ngModel)]="footer1subtitle4"
     *ngIf="sections[5].isVisible"
   />
   <label for="footer-soustitre5" class="pl-2" *ngIf="sections[5].isVisible"
@@ -543,6 +565,7 @@
     id="footer-soustitre5"
     class="w-full py-2 px-3 rounded-md border border-gray-500"
     placeholder="soustitre5"
+    [(ngModel)]="footer1subtitle5"
     *ngIf="sections[5].isVisible"
   />
   <label for="footer-soustitre6" class="pl-2" *ngIf="sections[5].isVisible"
@@ -554,6 +577,7 @@
     id="footer-soustitre6"
     class="w-full py-2 px-3 rounded-md border border-gray-500"
     placeholder="soustitre6"
+    [(ngModel)]="footer1subtitle6"
     *ngIf="sections[5].isVisible"
   />
   <label for="footer-titre2" class="pl-2" *ngIf="sections[5].isVisible"
@@ -565,6 +589,7 @@
     id="footer-titre2"
     class="w-full py-2 px-3 rounded-md border border-gray-500"
     placeholder="titre2"
+    [(ngModel)]="footertitle2"
     *ngIf="sections[5].isVisible"
   />
   <label for="footer-soustitre2-1" class="pl-2" *ngIf="sections[5].isVisible"
@@ -576,6 +601,7 @@
     id="footer-soustitre2-1"
     class="w-full py-2 px-3 rounded-md border border-gray-500"
     placeholder="soustitre 1"
+    [(ngModel)]="footer2subtitle1"
     *ngIf="sections[5].isVisible"
   />
   <label for="footer-soustitre2-2" class="pl-2" *ngIf="sections[5].isVisible"
@@ -587,6 +613,7 @@
     id="footer-soustitre2-2"
     class="w-full py-2 px-3 rounded-md border border-gray-500"
     placeholder="soustitre 2"
+    [(ngModel)]="footer2subtitle2"
     *ngIf="sections[5].isVisible"
   />
   <label for="footer-soustitre2-3" class="pl-2" *ngIf="sections[5].isVisible"
@@ -598,6 +625,7 @@
     id="footer-soustitre2-3"
     class="w-full py-2 px-3 rounded-md border border-gray-500"
     placeholder="soustitre 3"
+    [(ngModel)]="footer2subtitle3"
     *ngIf="sections[5].isVisible"
   />
   <label for="footer-titre3" class="pl-2" *ngIf="sections[5].isVisible"
@@ -609,6 +637,7 @@
     id="footer-titre3"
     class="w-full py-2 px-3 rounded-md border border-gray-500"
     placeholder="titre3"
+    [(ngModel)]="footertitle3"
     *ngIf="sections[5].isVisible"
   />
   <label for="footer-soustitre3-1" class="pl-2" *ngIf="sections[5].isVisible"
@@ -620,6 +649,7 @@
     id="footer-soustitre3-1"
     class="w-full py-2 px-3 rounded-md border border-gray-500"
     placeholder="soustitre 1"
+    [(ngModel)]="footer3subtitle1"
     *ngIf="sections[5].isVisible"
   />
   <hr class="w-full mt-3" />
