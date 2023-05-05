@@ -1,4 +1,4 @@
-import { HttpHeaders } from '@angular/common/http';
+import { HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -22,7 +22,7 @@ export class SeconnecterComponent {
       'Content-Type',
       'application/json; charset=utf-8'
     );
-    return this.http.post(process.env.NG_APP_API + '/login', userJson, {
+    return this.http.post(process.env.NG_APP_API + '/authenticate', userJson, {
       headers: headers,
       observe: 'response',
     });
@@ -41,11 +41,18 @@ export class SeconnecterComponent {
         };
         const userJson = JSON.stringify(newUser);
         console.log(userJson);
+        interface ApiResponse {
+          token?: string;
+        }
         this.loginUser(userJson).subscribe({
-          next: (v) => {
+          next: (v: HttpResponse<ApiResponse>) => {
             console.log(v);
             this.errormsg = '';
             this.router.navigate(['/create']);
+            if (v.body?.token) {
+              console.log(v.body.token);
+              localStorage.setItem('token', v.body.token);
+            }
           },
           error: (e) => {
             console.error(e);
