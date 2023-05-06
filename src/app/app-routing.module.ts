@@ -8,6 +8,7 @@ import { CreerpageComponent } from './creerpage/creerpage.component';
 import { SiteComponent } from './site/site.component';
 import { PreviewComponent } from './preview/preview.component';
 import { FormselectorComponent } from './formselector/formselector.component';
+import { ProfileComponent } from './profile/profile.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'site/:siteId', component: SiteComponent },
   { path: 'preview/:siteId', component: PreviewComponent },
   { path: 'create/:formId', component: FormselectorComponent },
+  { path: 'profile', component: ProfileComponent },
 ];
 
 @NgModule({

@@ -48,11 +48,11 @@ export class SeconnecterComponent {
           next: (v: HttpResponse<ApiResponse>) => {
             console.log(v);
             this.errormsg = '';
-            this.router.navigate(['/create']);
             if (v.body?.token) {
               console.log(v.body.token);
               localStorage.setItem('token', v.body.token);
             }
+            this.router.navigate(['/create']);
           },
           error: (e) => {
             console.error(e);

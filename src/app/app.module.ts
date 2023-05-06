@@ -27,6 +27,7 @@ import { Form1Component } from './form1/form1.component';
 import { Form2Component } from './form2/form2.component';
 import { Form3Component } from './form3/form3.component';
 import { FormselectorComponent } from './formselector/formselector.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import { FormselectorComponent } from './formselector/formselector.component';
     Form2Component,
     Form3Component,
     FormselectorComponent,
+    ProfileComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],

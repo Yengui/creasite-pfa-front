@@ -4,6 +4,15 @@
   (ngSubmit)="onSubmit(myForm)"
   class="w-full md:w-11/12 rounded-lg bg-gray-50 border-gray-400 shadow-sm shadow-gray-800 px-3 sm:px-10 xl:px-20 text-center flex justify-center items-start flex-col gap-1 py-10 mx-auto my-10"
 >
+  <label for="site-titre" class="pl-2">Nom du site</label>
+  <input
+    type="text"
+    name="site-titre"
+    id="site-titre"
+    class="w-full py-2 px-3 rounded-md border border-gray-500"
+    placeholder="Nom du site"
+    [(ngModel)]="sitetitre"
+  />
   <!-- Hero section  -->
   <label class="text-xl font-bold my-5">
     <input type="checkbox" name="hero" [(ngModel)]="sections[0].isVisible" />
@@ -55,7 +64,12 @@
     accept="image/*"
     *ngIf="sections[0].isVisible"
   />
-  <div class="w-full text-left" *ngIf="ticks['herosection'] === true">✔</div>
+  <div
+    class="w-full text-left"
+    *ngIf="ticks['herosection'] === true && sections[0].isVisible"
+  >
+    ✔
+  </div>
   <button
     type="button"
     (click)="upload('herosection')"
@@ -120,7 +134,12 @@
     accept="image/*"
     *ngIf="sections[1].isVisible"
   />
-  <div class="w-full text-left" *ngIf="ticks['section1image'] === true">✔</div>
+  <div
+    class="w-full text-left"
+    *ngIf="ticks['section1image'] === true && sections[1].isVisible"
+  >
+    ✔
+  </div>
   <button
     type="button"
     (click)="upload('section1image')"
@@ -211,7 +230,12 @@
     accept="image/*"
     *ngIf="sections[3].isVisible"
   />
-  <div class="w-full text-left" *ngIf="ticks['section3image1'] === true">✔</div>
+  <div
+    class="w-full text-left"
+    *ngIf="ticks['section3image1'] === true && sections[3].isVisible"
+  >
+    ✔
+  </div>
   <button
     type="button"
     (click)="upload('section3image1')"
@@ -258,7 +282,12 @@
     accept="image/*"
     *ngIf="sections[3].isVisible"
   />
-  <div class="w-full text-left" *ngIf="ticks['section3image2'] === true">✔</div>
+  <div
+    class="w-full text-left"
+    *ngIf="ticks['section3image2'] === true && sections[3].isVisible"
+  >
+    ✔
+  </div>
   <button
     type="button"
     (click)="upload('section3image2')"
@@ -305,7 +334,12 @@
     accept="image/*"
     *ngIf="sections[3].isVisible"
   />
-  <div class="w-full text-left" *ngIf="ticks['section3image3'] === true">✔</div>
+  <div
+    class="w-full text-left"
+    *ngIf="ticks['section3image3'] === true && sections[3].isVisible"
+  >
+    ✔
+  </div>
   <button
     type="button"
     (click)="upload('section3image3')"
@@ -352,7 +386,12 @@
     accept="image/*"
     *ngIf="sections[3].isVisible"
   />
-  <div class="w-full text-left" *ngIf="ticks['section3image4'] === true">✔</div>
+  <div
+    class="w-full text-left"
+    *ngIf="ticks['section3image4'] === true && sections[3].isVisible"
+  >
+    ✔
+  </div>
   <button
     type="button"
     (click)="upload('section3image4')"
@@ -405,7 +444,12 @@
     accept="image/*"
     *ngIf="sections[4].isVisible"
   />
-  <div class="w-full text-left" *ngIf="ticks['section4image1'] === true">✔</div>
+  <div
+    class="w-full text-left"
+    *ngIf="ticks['section4image1'] === true && sections[4].isVisible"
+  >
+    ✔
+  </div>
   <button
     type="button"
     (click)="upload('section4image1')"
@@ -424,7 +468,12 @@
     accept="image/*"
     *ngIf="sections[4].isVisible"
   />
-  <div class="w-full text-left" *ngIf="ticks['section4image2'] === true">✔</div>
+  <div
+    class="w-full text-left"
+    *ngIf="ticks['section4image2'] === true && sections[4].isVisible"
+  >
+    ✔
+  </div>
   <button
     type="button"
     (click)="upload('section4image2')"
@@ -443,7 +492,12 @@
     accept="image/*"
     *ngIf="sections[4].isVisible"
   />
-  <div class="w-full text-left" *ngIf="ticks['section4image3'] === true">✔</div>
+  <div
+    class="w-full text-left"
+    *ngIf="ticks['section4image3'] === true && sections[4].isVisible"
+  >
+    ✔
+  </div>
   <button
     type="button"
     (click)="upload('section4image3')"
@@ -462,7 +516,12 @@
     accept="image/*"
     *ngIf="sections[4].isVisible"
   />
-  <div class="w-full text-left" *ngIf="ticks['section4image4'] === true">✔</div>
+  <div
+    class="w-full text-left"
+    *ngIf="ticks['section4image4'] === true && sections[4].isVisible"
+  >
+    ✔
+  </div>
   <button
     type="button"
     (click)="upload('section4image4')"
@@ -474,7 +533,7 @@
   <hr class="w-full mt-3" />
   <!-- Footer  -->
   <label class="text-xl font-bold my-5">
-    <input type="checkbox" name="hero" [(ngModel)]="sections[5].isVisible" />
+    <input type="checkbox" name="footer" [(ngModel)]="sections[5].isVisible" />
     {{ sections[5].name }}
   </label>
   <label for="footer-image" class="pl-2" *ngIf="sections[5].isVisible"
@@ -487,7 +546,12 @@
     accept="image/*"
     *ngIf="sections[5].isVisible"
   />
-  <div class="w-full text-left" *ngIf="ticks['footerimage'] === true">✔</div>
+  <div
+    class="w-full text-left"
+    *ngIf="ticks['footerimage'] === true && sections[5].isVisible"
+  >
+    ✔
+  </div>
   <button
     type="button"
     (click)="upload('footerimage')"
