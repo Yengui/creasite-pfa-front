@@ -63,14 +63,8 @@ export class SiteComponent implements OnInit {
 
   ngOnInit() {
     this.siteId = this.route.snapshot.paramMap.get('siteId') || '';
-    const headers = new HttpHeaders().set(
-      'Authorization',
-      'Bearer ' + localStorage.getItem('token') || ''
-    );
     this.http
-      .get(`${process.env.NG_APP_API}/websites/${this.siteId}`, {
-        headers,
-      })
+      .get(`${process.env.NG_APP_API}/websites/${this.siteId}`)
       .subscribe((data: any) => {
         this.websiteData = { ...data };
         this.template = data?.template?.id;
