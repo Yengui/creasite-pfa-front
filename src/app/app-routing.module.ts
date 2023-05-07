@@ -9,17 +9,31 @@ import { SiteComponent } from './site/site.component';
 import { PreviewComponent } from './preview/preview.component';
 import { FormselectorComponent } from './formselector/formselector.component';
 import { ProfileComponent } from './profile/profile.component';
+import { AuthGuard } from './guards/auth.guard';
+import { ReverseAuthGuard } from './guards/reverseauth.guard';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'login', component: SeconnecterComponent },
-  { path: 'signup', component: SinscrireComponent },
+  {
+    path: 'login',
+    component: SeconnecterComponent,
+    canActivate: [ReverseAuthGuard],
+  },
+  {
+    path: 'signup',
+    component: SinscrireComponent,
+    canActivate: [ReverseAuthGuard],
+  },
   { path: 'contact', component: ContacterComponent },
-  { path: 'create', component: CreerpageComponent },
+  { path: 'create', component: CreerpageComponent, canActivate: [AuthGuard] },
   { path: 'site/:siteId', component: SiteComponent },
   { path: 'preview/:siteId', component: PreviewComponent },
-  { path: 'create/:formId', component: FormselectorComponent },
-  { path: 'profile', component: ProfileComponent },
+  {
+    path: 'create/:formId',
+    component: FormselectorComponent,
+    canActivate: [AuthGuard],
+  },
+  { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
 ];
 
 @NgModule({

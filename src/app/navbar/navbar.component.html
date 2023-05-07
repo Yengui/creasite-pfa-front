@@ -17,8 +17,14 @@
             <a routerLink="/create">Créer un site</a>
           </li>
           <li class="hidden lg:block"><a routerLink="/contact">Contact</a></li>
-          <li class="text-themeblue-50 hidden lg:block">
+          <li
+            class="text-themeblue-50 hidden lg:block"
+            *ngIf="loggedIn === false"
+          >
             <a routerLink="/signup">S'inscrire</a>
+          </li>
+          <li class="hidden lg:block" *ngIf="loggedIn === true">
+            <a routerLink="/login" (click)="disconnect()">Se déconnecter</a>
           </li>
           <li class="text-black text-2xl cursor-pointer hidden lg:block">
             <i class="fa fa-bell text-xl"></i>
@@ -36,8 +42,13 @@
       <li><a routerLink="/">Accueil</a></li>
       <li><a routerLink="/create">Créer un site</a></li>
       <li><a routerLink="/contact">Contact</a></li>
-      <li class="text-themeblue-50"><a routerLink="/profile">Profile</a></li>
-      <li class="text-themeblue-50">
+      <li class="text-themeblue-50" *ngIf="loggedIn === true">
+        <a routerLink="/profile">Profile</a>
+      </li>
+      <li *ngIf="loggedIn === true">
+        <a routerLink="/login" (click)="disconnect()">Se déconnecter</a>
+      </li>
+      <li class="text-themeblue-50" *ngIf="loggedIn === false">
         <a routerLink="/signup">S'inscrire</a>
       </li>
     </ul>
