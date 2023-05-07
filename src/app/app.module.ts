@@ -28,6 +28,7 @@ import { Form2Component } from './form2/form2.component';
 import { Form3Component } from './form3/form3.component';
 import { FormselectorComponent } from './formselector/formselector.component';
 import { ProfileComponent } from './profile/profile.component';
+import { Template1dynamicComponent } from './template1dynamic/template1dynamic.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import { ProfileComponent } from './profile/profile.component';
     Form3Component,
     FormselectorComponent,
     ProfileComponent,
+    Template1dynamicComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],

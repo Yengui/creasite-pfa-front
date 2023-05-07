@@ -1,0 +1,270 @@
+<!-- navbar -->
+<nav
+  class="sm:h-20 w-full bg-[#ffffffb9] sticky top-0 left-0 shadow-sm shadow-gray-500 z-50"
+>
+  <ul class="hidden sm:flex justify-evenly items-center h-full">
+    <li *ngIf="section1Display">
+      <a class="font-semibold" href="site/{{ websiteID }}#section1">section1</a>
+    </li>
+    <li *ngIf="section2Display">
+      <a class="font-semibold" href="site/{{ websiteID }}#section2">section2</a>
+    </li>
+    <li *ngIf="heroSectionDisplay">
+      <a class="mx-8 font-black text-2xl" href="site/{{ websiteID }}#hero">{{
+        data.name
+      }}</a>
+    </li>
+    <li *ngIf="section3Display">
+      <a class="font-semibold" href="site/{{ websiteID }}#section3">section3</a>
+    </li>
+    <li *ngIf="section4Display">
+      <a class="font-semibold" href="site/{{ websiteID }}#section4">section4</a>
+    </li>
+  </ul>
+  <ul class="flex sm:hidden justify-between items-center px-5 h-full w-full">
+    <li class="py-5" *ngIf="heroSectionDisplay">
+      <a class="mx-8 font-black text-2xl" href="site/{{ websiteID }}#hero">{{
+        data.name
+      }}</a>
+    </li>
+    <li class="text-black text-2xl cursor-pointer" (click)="handleListClick()">
+      <i class="fa fa-bars"></i>
+    </li>
+  </ul>
+  <ul
+    *ngIf="openList"
+    class="sm:hidden flex justify-center items-center gap-2 flex-col pb-2 sm:pb-0"
+  >
+    <li *ngIf="section1Display">
+      <a class="font-semibold" href="site/{{ websiteID }}#section1">section1</a>
+    </li>
+    <li *ngIf="section2Display">
+      <a class="font-semibold" href="site/{{ websiteID }}#section2">section2</a>
+    </li>
+    <li *ngIf="section3Display">
+      <a class="font-semibold" href="site/{{ websiteID }}#section3">section3</a>
+    </li>
+    <li *ngIf="section4Display">
+      <a class="font-semibold" href="site/{{ websiteID }}#section4">section4</a>
+    </li>
+  </ul>
+</nav>
+
+<!-- hero section -->
+<section class="h-screen w-full relative" id="hero" *ngIf="heroSectionDisplay">
+  <div
+    class="h-full w-full absolute top-0 left-0 herosection z-10"
+    [style.background-image]="'url(' + hero_image + ')'"
+  ></div>
+  <div
+    class="h-full w-full absolute top-0 left-0 z-20 bg-transparent flex justify-center items-center flex-col"
+  >
+    <h1
+      class="font-bold text-center text-white text-4xl sm:text-5xl lg:text-6xl mb-20"
+    >
+      {{ hero_nomsite }}
+    </h1>
+    <div class="flex justify-center items-center flex-col gap-2 sm:flex-row">
+      <a
+        *ngIf="section1Display"
+        href="site/{{ websiteID }}#section1"
+        class="py-2 px-12 border bg-[#FF2E63] border-white text-white hover:bg-transparent hover:border-[#FF2E63] hover:text-[#FF2E63] font-semibold rounded-lg duration-300 sm:text-xl"
+      >
+        {{ hero_sect1 }}
+      </a>
+      <a
+        *ngIf="section3Display"
+        href="site/{{ websiteID }}#section3"
+        class="py-2 px-12 border bg-transparent border-[#FF2E63] text-[#FF2E63] hover:bg-[#FF2E63] hover:border-white hover:text-white font-semibold rounded-lg duration-300 sm:text-xl"
+      >
+        {{ hero_sect3 }}
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- section 1 -->
+<section class="pt-32 pb-3" id="section1" *ngIf="section1Display">
+  <div
+    class="rounded-none sm:rounded-lg shadow-md shadow-gray-300 flex justify-between items-center flex-col sm:flex-row mx-1 sm:mx-8 border border-gray-300"
+  >
+    <div class="w-full rounded-none sm:rounded-l-lg py-10 sm:py-1">
+      <h2 class="font-bold text-3xl mb-2 px-12">{{ section1_titre }}</h2>
+      <p class="px-12">
+        {{ section1_description1 }}
+      </p>
+      <p class="text-sm text-[#FF2E63] mt-2 px-12">
+        {{ section1_description2 }}
+      </p>
+    </div>
+    <div
+      class="w-full h-96 rounded-none sm:rounded-r-lg section1image"
+      [style.background-image]="'url(' + section1_image + ')'"
+    ></div>
+  </div>
+</section>
+
+<!-- section 2 -->
+<section
+  class="mt-32 py-20 bg-[#08D9D6] relative"
+  id="section2"
+  *ngIf="section2Display"
+>
+  <div class="absolute top-0 left-0 w-full h-full section2image z-10"></div>
+  <h2 class="text-center font-bold text-2xl sm:text-4xl mb-10 z-20 relative">
+    {{ section2_titre }}
+  </h2>
+  <p class="text-center px-3 sm:px-10 md:px-20 lg:px-40 z-20 relative">
+    {{ section2_description }}
+  </p>
+</section>
+
+<!-- section 3 -->
+<section
+  class="mt-32 grid lg:grid-cols-2 grid-cols-1 gap-10 px-3"
+  id="section3"
+  *ngIf="section3Display"
+>
+  <div class="w-full h-full flex justify-center items-center">
+    <div class="max-w-md w-full h-full rounded-lg relative">
+      <img
+        src="/assets/alexander-ugolkov-fooSjHG61OY-unsplash1.png"
+        alt="section3"
+        class="w-full h-full object-cover rounded-lg"
+      />
+      <div
+        class="absolute top-0 left-0 w-full h-full z-20 flex justify-end flex-col items-start text-white p-3 sm:p-5"
+      >
+        <h3 class="font-bold text-xl sm:text-2xl">Mon titre</h3>
+        <p class="text-sm sm:text-base">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras et.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="w-full h-full flex justify-center items-center">
+    <div class="max-w-md w-full h-full rounded-lg relative">
+      <img
+        src="/assets/alexander-ugolkov-fooSjHG61OY-unsplash1.png"
+        alt="section3"
+        class="w-full h-full object-cover rounded-lg"
+      />
+      <div
+        class="absolute top-0 left-0 w-full h-full z-20 flex justify-end flex-col items-start text-white p-3 sm:p-5"
+      >
+        <h3 class="font-bold text-xl sm:text-2xl">Mon titre</h3>
+        <p class="text-sm sm:text-base">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras et.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="w-full h-full flex justify-center items-center">
+    <div class="max-w-md w-full h-full rounded-lg relative">
+      <img
+        src="/assets/alexander-ugolkov-fooSjHG61OY-unsplash1.png"
+        alt="section3"
+        class="w-full h-full object-cover rounded-lg"
+      />
+      <div
+        class="absolute top-0 left-0 w-full h-full z-20 flex justify-end flex-col items-start text-white p-3 sm:p-5"
+      >
+        <h3 class="font-bold text-xl sm:text-2xl">Mon titre</h3>
+        <p class="text-sm sm:text-base">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras et.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="w-full h-full flex justify-center items-center">
+    <div class="max-w-md w-full h-full rounded-lg relative">
+      <img
+        src="/assets/alexander-ugolkov-fooSjHG61OY-unsplash1.png"
+        alt="section3"
+        class="w-full h-full object-cover rounded-lg"
+      />
+      <div
+        class="absolute top-0 left-0 w-full h-full z-20 flex justify-end flex-col items-start text-white p-3 sm:p-5"
+      >
+        <h3 class="font-bold text-xl sm:text-2xl">Mon titre</h3>
+        <p class="text-sm sm:text-base">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras et.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- section 4 -->
+<section
+  id="section4"
+  class="mt-32 border-y-2 border-y-black flex justify-between items-center px-3 sm:px-10 py-8 gap-10 flex-col xl:flex-row"
+  *ngIf="section4Display"
+>
+  <div>
+    <h2 class="font-bold text-gray-800 text-2xl sm:text-3xl">
+      Lorem ipsum dolor sit amet
+    </h2>
+    <p class="text-[#08D9D6]">Lorem ipsum dolor sit amet</p>
+  </div>
+  <div class="flex justify-center items-center gap-5 flex-col md:flex-row">
+    <img
+      class="w-40 h-40 rounded-full object-cover"
+      src="/assets/simone-hutsch-8n9npBvQUWg-unsplash1.png"
+      alt="1section4"
+    />
+    <img
+      class="w-40 h-40 rounded-full object-cover"
+      src="/assets/simone-hutsch-8n9npBvQUWg-unsplash1.png"
+      alt="2section4"
+    />
+    <img
+      class="w-40 h-40 rounded-full object-cover"
+      src="/assets/simone-hutsch-8n9npBvQUWg-unsplash1.png"
+      alt="3section4"
+    />
+    <img
+      class="w-40 h-40 rounded-full object-cover"
+      src="/assets/simone-hutsch-8n9npBvQUWg-unsplash1.png"
+      alt="4section4"
+    />
+  </div>
+</section>
+
+<!-- footer -->
+<footer class="mt-32 pt-20 pb-2 bg-gray-800 text-white" *ngIf="footerDisplay">
+  <div
+    class="flex justify-between items-center flex-col xl:flex-row gap-10 px-2 sm:px-10"
+  >
+    <div class="xl:w-1/2 text-center xl:text-left">
+      <h3 class="text-2xl font-bold mb-1">{{ footer_titre1 }}</h3>
+      <ul>
+        <li>{{ footer_t1_soustitre1 }}</li>
+        <li>{{ footer_t1_soustitre2 }}</li>
+        <li>{{ footer_t1_soustitre3 }}</li>
+        <li>{{ footer_t1_soustitre4 }}</li>
+        <li>{{ footer_t1_soustitre5 }}</li>
+        <li>{{ footer_t1_soustitre6 }}</li>
+      </ul>
+    </div>
+    <div class="xl:w-1/2 text-center xl:text-left">
+      <h3 class="text-2xl font-bold mb-1">{{ footer_titre2 }}</h3>
+      <ul class="mb-3">
+        <li>{{ footer_t2_soustitre1 }}</li>
+        <li>{{ footer_t2_soustitre2 }}</li>
+        <li>{{ footer_t2_soustitre3 }}</li>
+      </ul>
+      <h3 class="text-2xl font-bold mb-1">{{ footer_titre3 }}</h3>
+      <ul>
+        <li>{{ footer_t3_soustitre1 }}</li>
+      </ul>
+    </div>
+    <div class="xl:w-full">
+      <img src="{{ footer_image }}" alt="footer" class="rounded-lg" />
+    </div>
+  </div>
+  <div class="h-[0.03rem] max-w-xs bg-gray-500 mt-20 mb-2 mx-auto"></div>
+  <div class="w-full text-center">
+    <small>Tous droits réservés - {{ data.name }}</small>
+  </div>
+</footer>

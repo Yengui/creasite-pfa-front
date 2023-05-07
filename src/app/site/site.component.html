@@ -1,6 +1,8 @@
 <ng-container [ngSwitch]="template">
-  <app-template1 *ngSwitchCase="1"></app-template1>
-  <app-template2 *ngSwitchCase="2"></app-template2>
-  <app-template3 *ngSwitchCase="3"></app-template3>
+  <app-template1dynamic
+    *ngSwitchCase="1"
+    [data]="websiteData"
+    [websiteID]="siteId"
+  ></app-template1dynamic>
   <div *ngSwitchDefault>Not found</div>
 </ng-container>
