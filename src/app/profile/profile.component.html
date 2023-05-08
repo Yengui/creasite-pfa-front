@@ -6,10 +6,12 @@
   <h1 class="font-black text-3xl text-themegray-50 text-center mb-10">
     ★ Mes sites ★
   </h1>
-  <a href="site/1" class="my-3"
-    ><div class="underline text-themeblue-50 font-semibold">
-      - site 1 exemple
-    </div></a
-  >
+  <div class="underline text-themeblue-50 font-semibold text-center my-3">
+    <ul>
+      <li *ngFor="let website of websites; let i = index">
+        <a href="/site/{{ website.id }}">★ {{ i }}. {{ website.name }} ★</a>
+      </li>
+    </ul>
+  </div>
 </div>
 <app-footer></app-footer>
